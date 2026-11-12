@@ -1,0 +1,224 @@
+Ex. 2  React Lab Exercise: Using Props — Step by Step
+Objective
+To create a React application that demonstrates how to pass data from a parent component to a 
+child component using Props.
+Step 1: Create a React Project
+Open the terminal and run:
+npm create vite@latest props-demo -- --template react
+cd props-demo
+npm install
+npm run dev
+Open the URL shown in the terminal.
+Step 2: Understand Props
+Props = Properties
+Props are used to pass data from a parent component to a child component.
+Parent Component
+       │
+       │  props
+       ↓
+Child Component
+Example:
+<Student name="Ajith" />
+Here:
+•
+Student → Child component
+•
+name → Prop
+•
+"Ajith" → Prop value
+Step 3: Create the Child Component
+Create:
+src/Student.jsx
+Add:
+function Student(props) {
+  return (
+
+    <div>
+      <h2>Student Details</h2>
+      <p>Name: {props.name}</p>
+      <p>Department: {props.department}</p>
+      <p>Year: {props.year}</p>
+    </div>
+  );
+}
+export default Student;
+Explanation
+props.name
+gets the value of the name prop.
+Similarly:
+props.department
+props.year
+get the other values.
+Step 4: Use the Child Component
+Open:
+src/App.jsx
+Write:
+import Student from "./Student";
+function App() {
+  return (
+    <div>
+      <h1>React Props Example</h1>
+      <Student
+        name="Ajith"
+        department="CSE"
+        year="III Year"
+      />
+    </div>
+  );
+}
+export default App;
+Step 5: Run the Application
+Run:
+npm run dev
+
+Output
+React Props Example
+Student Details
+Name: Ajith
+Department: CSE
+Year: III Year
+Step 6: Try Multiple Students
+Modify App.jsx:
+import Student from "./Student";
+function App() {
+  return (
+    <div>
+      <h1>Student Information</h1>
+      <Student
+        name="Ajith"
+        department="CSE"
+        year="III Year"
+      />
+      <Student
+        name="Arun"
+        department="IT"
+        year="II Year"
+      />
+      <Student
+        name="Priya"
+        department="AIDS"
+        year="IV Year"
+      />
+    </div>
+  );
+}
+export default App;
+Output
+Student Information
+Student Details
+Name: Ajith
+Department: CSE
+Year: III Year
+Student Details
+Name: Arun
+Department: IT
+Year: II Year
+Student Details
+Name: Priya
+Department: AIDS
+
+Year: IV Year
+Step 7: Destructuring Props
+Props destructuring means taking individual values directly from the props object 
+instead of repeatedly writing props.propertyName. 
+Instead of:
+function Student(props) {
+  return <p>{props.name}</p>;
+}
+we can write:
+function Student({ name, department, year }) {
+  return (
+    <div>
+      <h2>{name}</h2>
+      <p>Department: {department}</p>
+      <p>Year: {year}</p>
+    </div>
+  );
+}
+export default Student;
+This is called props destructuring.
+Skill: Props destructuring makes React components cleaner, shorter, and easier to read. 
+Step 8: Important Rule
+Data Flow
+        Parent
+          │
+          │ Props
+          ↓
+        Child
+The normal direction of data flow is:
+Parent → Child
+Example
+Parent:
+
+function App() {
+  return <Student name="Ajith" />;
+}
+Child:
+function Student(props) {
+  return <h2>Hello {props.name}</h2>;
+}
+The child can read:
+props.name
+But should not do:
+props.name = "Kumar";   // ❌ Don't modify props
+Props are read-only.
+Student Memory Trick
+PROPS
+Parent
+   ↓
+Data
+   ↓
+Child
+Props = Information passed from Parent → Child
+Step 9: Key Concepts Learned 
+Concept
+Meaning
+Component
+Reusable UI block
+Props
+Data passed to a component
+Parent
+Component that sends props
+Child
+Component that receives props
+Destructuring
+Extracting values from props
+Read-only
+Child should not modify props
+
+Concept
+Meaning
+One-way data flow Parent → Child
+Student Lab Task
+Problem
+Create a React application using Props to display employee information.
+The parent component should pass:
+•
+Employee Name
+•
+Employee ID
+•
+Department
+•
+Designation
+Expected Output
+Employee Details
+Name: Ravi
+ID: 101
+Department: CSE
+Designation: Software Developer
+Student Activity
+1. Create a Vite React project.
+2. Create Employee.jsx.
+3. Create an Employee component.
+4. Pass four props from App.jsx.
+5. Display the values in Employee.jsx.
+6. Add three employees.
+7. Run and verify the output.
+Viva Questions
+1. What are Props in React?
+2. Why are Props used?
+3. Can a child component directly modify Props?
+4. What is the direction of Props data flow?
+5. What is props destructuring?
+6. What is the difference between Props and State?
