@@ -1,72 +1,45 @@
-# Ex. 2  React Lab Exercise: Using Props — Step by Step
-
-## Exercise Number
-Exercise 2
-
-## Subject
-AI1067 - Modern Web Application Development (React JS Lab)
-
-## Student Details
-- **Name:** LOGESH S
-- **Roll No:** 2305001014
-- **Department:** B.Tech CSE
-- **College:** IST, NMV University
-
-## Objective
-To create a React application that demonstrates how to pass data from a parent component to a
-
-## Description
-Ex. 2  React Lab Exercise: Using Props — Step by Step
-Objective
-To create a React application that demonstrates how to pass data from a parent component to a 
-child component using Props.
-Step 1: Create a React Project
-Open the terminal and run:
-npm create vite@latest props-demo -- --template react
-cd props-demo
-npm install
-npm run dev
-Open the URL shown in the terminal.
-Step 2: Understand Props
-Props = Properties
-Props are used to pass data from a parent component to a child component.
-Parent Component
-       │
-       │  props
-       ↓
-Child Component
-Example:
-<Student name="Ajith" />
-Here:
-•
-Student → Child component
-•
-name → Prop
-•
-"Ajith" → Prop value
-Step 3: Create the Child Component
-Create:
-src/Student.jsx
-Add:
-function Student(props) {
-  return (
-
-    <div>
-      <h2>Student Detail
-
-## Technologies Used
-- React JS
-- Vite
-- JavaScript (JSX)
-- HTML5 / CSS3
-
-## How to Run
-```bash
-npm create vite@latest my-app -- --template react
-cd my-app
-npm install
-npm run dev
-```
-
-## Exercise Content
-See `exercise.txt` for complete exercise content and source code.
+React Lab Exercise 2: Using Props — Step by Step
+Name: Aravindan T
+Roll no: 2305001003
+Department: CSE
+AIM
+To create a React application that demonstrates how to pass data from a parent
+component to a child component using Props.
+PROGRAM
+i) App.jsx
+README
+12/11/2026, 21:53 aravindan2005/React-Lab-Exercise-2-Using-Props-Step-by-Step
+https://github.com/aravindan2005/React-Lab-Exercise-2-Using-Props-Step-by-Step#react-lab-exercise-2-using-props--step-by-step 1/3
+
+import Employee from "./Employee";
+function App() {
+return (
+<div>
+<h1>Employee Information</h1>
+<Employee
+name="Aravindan T"
+id="101"
+department="CSE"
+designation="Software Developer"
+/>
+<Employee
+name="Hariharan S"
+id="102"
+department="IT"
+designation="Web Developer"
+/>
+<Employee
+name="Moulishwar G"
+id="103"
+department="AIDS"
+designation="Data Analyst"
+/>
+</div>
+);
+}
+export default App;
+OUTPUT
+RESULT
+The React application was successfully created using Props to pass employee
+information from the parent component to the child component. Three employee
+details were displayed successfully using Props and Props Destructuring
