@@ -1,6 +1,6 @@
 # React Lab Exercise 2: Using Props — Step by Step
-## Name: Aravindan T
-## Roll no: 2305001003
+## Name: LOGESH S
+## Roll no: 2305001014
 ## Department: CSE
 
 ## AIM
